@@ -1,0 +1,299 @@
+{
+  "project_info": {
+    "project_number": "884975013139",
+    "firebase_url": "https://inventorymanagementtry3.firebaseio.com",
+    "project_id": "inventorymanagementtry3",
+    "storage_bucket": "inventorymanagementtry3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884975013139:android:ad5fda378d358bac",
+        "android_client_info": {
+          "package_name": "com.ilyakamar.im_try_4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884975013139-8s9pouo5jrpvp10q01d50ekj72ql0hqq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ilyakamar.im_try_4",
+            "certificate_hash": "182ee63f0a548a3746ec9f63a2695e8e7d303322"
+          }
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5RKqXz9jKfPw28PMj8khpnODbjFYKTsw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884975013139:android:c06dee3e0d675f00",
+        "android_client_info": {
+          "package_name": "com.ilyakamar.im_try_4.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884975013139-2eb708e87o2j9f8pk5fmksphctpc71qe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ilyakamar.im_try_4.app",
+            "certificate_hash": "182ee63f0a548a3746ec9f63a2695e8e7d303322"
+          }
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5RKqXz9jKfPw28PMj8khpnODbjFYKTsw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884975013139:android:6d74395e14846291",
+        "android_client_info": {
+          "package_name": "com.ilyakamar.inventory_client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884975013139-1l7mmmfs06pjt48l8q2tqrduk815tti7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ilyakamar.inventory_client",
+            "certificate_hash": "182ee63f0a548a3746ec9f63a2695e8e7d303322"
+          }
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5RKqXz9jKfPw28PMj8khpnODbjFYKTsw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884975013139:android:edd02813cf4a8f93",
+        "android_client_info": {
+          "package_name": "com.ilyakamar.inventorymanagement_try_3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884975013139-9al5jp88kfrpm7tndn6bdm605one77ar.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ilyakamar.inventorymanagement_try_3",
+            "certificate_hash": "182ee63f0a548a3746ec9f63a2695e8e7d303322"
+          }
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5RKqXz9jKfPw28PMj8khpnODbjFYKTsw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884975013139:android:f150778f8c817ae4",
+        "android_client_info": {
+          "package_name": "com.ilyakamar.inventorymanagment_try_4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884975013139-0elnvr5gua5mafd3tu9b371gh0j0p203.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ilyakamar.inventorymanagment_try_4",
+            "certificate_hash": "182ee63f0a548a3746ec9f63a2695e8e7d303322"
+          }
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5RKqXz9jKfPw28PMj8khpnODbjFYKTsw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884975013139:android:cb38175d947190b8",
+        "android_client_info": {
+          "package_name": "com.ilyakamar.my_try_inventory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884975013139-f7lj4b4hfi3dd4mh66gfjdb25b1erff4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ilyakamar.my_try_inventory",
+            "certificate_hash": "182ee63f0a548a3746ec9f63a2695e8e7d303322"
+          }
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5RKqXz9jKfPw28PMj8khpnODbjFYKTsw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884975013139-3gm48g12cdqc8faui29631voqn4sou4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
