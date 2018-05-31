@@ -25,14 +25,11 @@ dependencies {
 
     implementation 'com.android.support:appcompat-v7:27.1.1'
 
-
     // design
     implementation 'com.android.support:design:27.+'
 
-
     // elegant-number-button
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
-
 
     // constraint-layout
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
@@ -44,7 +41,6 @@ dependencies {
 
     // firebase-ui-database
     implementation 'com.firebaseui:firebase-ui-database:1.2.0'
-
 
     // support:design
     implementation 'com.android.support:design:27.1.1'
@@ -61,6 +57,11 @@ dependencies {
 
     // picasso
     implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    // add library
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Login_Activity extends AppCompatActivity implements View.OnClickListener{
 
@@ -59,6 +61,9 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
 
         // Firebase
         mAuth = FirebaseAuth.getInstance();
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference table_user = database.getReference("User");
 
 
         iv_closeLogin = (ImageView) findViewById(R.id.iv_closeLogin);

@@ -136,7 +136,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginLeft="8dp"
                         android:layout_marginBottom="18dp"
-                        app:textSize="8sp"
+                        app:textSize="6sp"
                         app:backGroundColor="@color/colorAccent"
                         app:initialNumber="1"
                         app:finalNumber="20"/>

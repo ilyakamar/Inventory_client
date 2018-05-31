@@ -55,14 +55,14 @@ public class StartScreen_Activity extends AppCompatActivity implements View.OnCl
 
         switch (view.getId()) {
             case R.id.bt_startScreen_join:
-                Intent signupIntent = new Intent(StartScreen_Activity.this,Signup_Activity.class);
+                Intent signupIntent = new Intent(StartScreen_Activity.this,SignUp.class);
                 startActivity(signupIntent);
                 Log.d(TAG, "onClick: bt_startScreen_join");
 
                 break;
 
             case R.id.bt_startScreen_logIn:
-                Intent loginIntent = new Intent(StartScreen_Activity.this,Login_Activity.class);
+                Intent loginIntent = new Intent(StartScreen_Activity.this,Signin.class);
                 startActivity(loginIntent);
                 Log.d(TAG, "onClick: bt_startScreen_logIn");
                 break;
