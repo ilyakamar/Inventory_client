@@ -66,7 +66,7 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
         DatabaseReference table_user = database.getReference("User");
 
 
-        iv_closeLogin = (ImageView) findViewById(R.id.iv_closeLogin);
+//        iv_closeLogin = (ImageView) findViewById(R.id.iv_closeLogin);
         et_activity_signup_email = (EditText) findViewById(R.id.et_activity_signup_email);
         et_activity_signup_password = (EditText) findViewById(R.id.et_activity_signup_password);
         bt_login_activity_login = (Button)findViewById(R.id.bt_login_activity_login);
@@ -155,10 +155,10 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
                 fb_userLogin();
                 break;
 
-            case R.id.iv_closeLogin:
-                Login_Activity.super.onBackPressed();
-
-                break;
+//            case R.id.iv_closeLogin:
+//                Login_Activity.super.onBackPressed();
+//
+//                break;
 
 
 

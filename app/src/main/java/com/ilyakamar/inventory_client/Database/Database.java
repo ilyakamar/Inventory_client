@@ -14,13 +14,14 @@ import java.util.List;
 public class Database extends SQLiteAssetHelper {// START
 
     private final static String DB_NAME =  "EatItDB.db";
+    private final static String DB_NAME_TRY =  "inventoryDB.db";
     private final static int DB_VER =  1;
 
 
 
 
     public Database(Context context) {// cons Database
-        super(context, DB_NAME, null, DB_VER);
+        super(context, DB_NAME_TRY, null, DB_VER);
 
     }// end cons Database
 
@@ -30,7 +31,8 @@ public class Database extends SQLiteAssetHelper {// START
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String [] sqlSelect = {"ProductName","ProductId","Quantity","Price","Disscount"};
+//        String [] sqlSelect = {"ProductName","ProductId","Quantity","Price","Disscount"};
+        String [] sqlSelect = {"ProductName","ProductId","Quantity","Price","Discount"};
         String sqlTable = "OrderDetail";
 
         qb.setTables(sqlTable);
@@ -44,7 +46,8 @@ public class Database extends SQLiteAssetHelper {// START
                         c.getString(c.getColumnIndex("ProductName")),
                         c.getString(c.getColumnIndex("Quantity")),
                         c.getString(c.getColumnIndex("Price")),
-                        c.getString(c.getColumnIndex("Disscount"))
+//                        c.getString(c.getColumnIndex("Disscount"))
+                        c.getString(c.getColumnIndex("Discount"))
                         ));
             }while (c.moveToNext());
         }
@@ -57,7 +60,8 @@ public class Database extends SQLiteAssetHelper {// START
 
         SQLiteDatabase db = getReadableDatabase();
         String query = String .format(
-                "INSERT INTO OrderDetail(ProductId,ProductName,Quantity,Price,Disscount) VALUES('%s','%s','%s','%s','%s');",
+//                "INSERT INTO OrderDetail(ProductId,ProductName,Quantity,Price,Disscount) VALUES('%s','%s','%s','%s','%s');",
+                "INSERT INTO OrderDetail(ProductId,ProductName,Quantity,Price,Discount) VALUES('%s','%s','%s','%s','%s');",
                 order.getProductId(),
                 order.getProductName(),
                 order.getQuantity(),

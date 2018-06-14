@@ -10,13 +10,17 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorGreyTransparent">
 
 
         <ImageView
             android:id="@+id/food_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="345dp"
+            android:layout_height="170dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
             android:scaleType="centerCrop" />
 
         <TextView

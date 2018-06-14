@@ -44,7 +44,7 @@ public class Signin extends AppCompatActivity {// START
 
                 // ProgressDialog
                 final ProgressDialog mDialog = new ProgressDialog(Signin.this);
-                mDialog.setMessage("Please waiting...");
+                mDialog.setMessage("אנא המתן...");
                 mDialog.show();
 
 
@@ -63,7 +63,7 @@ public class Signin extends AppCompatActivity {// START
 
                             user.setPhone(edtPhone.getText().toString());// set Phone
                             if (user.getPassword().equals(edtPassword.getText().toString())){
-                                Toast.makeText(Signin.this, "Sign in successfully !",
+                                Toast.makeText(Signin.this, "כניסה בוצעה בהצלחה !",
                                         Toast.LENGTH_SHORT).show();
 
                                 Intent homeIntent= new Intent(Signin.this,Home.class);
@@ -71,14 +71,14 @@ public class Signin extends AppCompatActivity {// START
                                 startActivity(homeIntent);
                                 finish();
                             }else {
-                                Toast.makeText(Signin.this, "Wrong Password !",
+                                Toast.makeText(Signin.this, "סיסמה שגויה !",
                                         Toast.LENGTH_SHORT).show();
                             }
 
 
                         }else {
                             mDialog.dismiss();
-                            Toast.makeText(Signin.this, "User not exist in Database",
+                            Toast.makeText(Signin.this, "שם המשתמש אינו רשום במערכת",
                                     Toast.LENGTH_SHORT).show();
                         }
 

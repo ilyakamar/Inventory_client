@@ -35,7 +35,7 @@ public class Cart extends AppCompatActivity {// START
     DatabaseReference requests;
 
     TextView txtTotalPrice;
-    Button btnPlace;
+    Button btnPlace,btnCancelOrder;
 
 
     List<Order> cart = new ArrayList<>();
@@ -62,18 +62,33 @@ public class Cart extends AppCompatActivity {// START
 
         txtTotalPrice = findViewById(R.id.total);
         btnPlace = findViewById(R.id.btnPlaceOrder);
+        btnCancelOrder = findViewById(R.id.btnCancelOrder);
 
 
         btnPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                showAlertDialog();
+                if (txtTotalPrice.getText().toString().trim().equals("0")){
+                    Toast.makeText(Cart.this, "ההזמנה ריקה",
+                            Toast.LENGTH_SHORT).show();
+                }else {
+                    showAlertDialog();
+                }
+
+
             }
         });
 
         LoadListFood();
 
+        btnCancelOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Database(getBaseContext()).cleanCart();
+                finish();
+            }
+        });
 
 
 
@@ -83,8 +98,8 @@ public class Cart extends AppCompatActivity {// START
 
 
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(Cart.this);
-        alertDialog.setTitle("One more step!");
-        alertDialog.setMessage("Enter your address: ");
+        alertDialog.setTitle("עוד צעד אחרון!");
+        alertDialog.setMessage("הכנס את הכתובת למשלוח: ");
 
         final EditText edtAddress = new EditText(Cart.this);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
@@ -95,7 +110,7 @@ public class Cart extends AppCompatActivity {// START
         alertDialog.setView(edtAddress); // add edit text to alert dialog
         alertDialog.setIcon(R.drawable.ic_cart_black_24dp);
 
-        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton("כן", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 // create new request
@@ -114,15 +129,15 @@ public class Cart extends AppCompatActivity {// START
                 // we will using system.currentMilli to key
                 requests.child(String.valueOf(System.currentTimeMillis()))
                         .setValue(request);
-                // Delete cart
+                // Delete cart   *********************************************************************
                 new Database(getBaseContext()).cleanCart();
-                Toast.makeText(Cart.this, "Thank you , Order Place",
+                Toast.makeText(Cart.this, "תודה על ההזמנה",
                         Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
 
-        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+        alertDialog.setNegativeButton("לא", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
@@ -141,14 +156,27 @@ public class Cart extends AppCompatActivity {// START
 
         //calculate total price
         int total = 0;
+
+
+
         for (Order order:cart){
-            total+=(Integer.parseInt(order.getPrice()))*(Integer.parseInt(order.getQuantity()));
+
+                total+=(Integer.parseInt(order.getPrice()))*(Integer.parseInt(order.getQuantity()));
+
+
+
 
             // tsarih livdok im nahuts
-            Locale locale = new Locale("en","US");
-            NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
+//            Locale locale = new Locale("en","US");
+//            NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
 
-            txtTotalPrice.setText(fmt.format(total));
+
+            // try
+
+            // Get locale's currency.
+             NumberFormat mCurrencyFormat = NumberFormat.getCurrencyInstance();
+
+            txtTotalPrice.setText(mCurrencyFormat.format(total));
         }
 
     }// end LoadListFood

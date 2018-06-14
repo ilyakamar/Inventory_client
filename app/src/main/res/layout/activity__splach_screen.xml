@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplachScreen_Activity"
-    android:background="@drawable/in_hebru">
+    android:background="@drawable/logomain">
 
 
 

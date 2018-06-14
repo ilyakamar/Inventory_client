@@ -46,7 +46,7 @@ public class SignUp extends AppCompatActivity {// START
 
                 // ProgressDialog
                 final ProgressDialog mDialog = new ProgressDialog(SignUp.this);
-                mDialog.setMessage("Please waiting...");
+                mDialog.setMessage("אנא המתן...");
                 mDialog.show();
 
 
@@ -54,20 +54,55 @@ public class SignUp extends AppCompatActivity {// START
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
+                        String noPhone,noName,noPassword;
+                        noPhone = edtPhone.getText().toString().trim();
+                        noName = edtName.getText().toString().trim();
+                        noPassword = edtPassword.getText().toString().trim();
 
-                        // Check if already user phone
-                        if (dataSnapshot.child(edtPhone.getText().toString()).exists()){
+
+
+                        // check if NO PARMS
+                        if (noPhone.isEmpty()){
                             mDialog.dismiss();
-                            Toast.makeText(SignUp.this, "Phone number already register",
+                            Toast.makeText(SignUp.this, "חובה להזין מספר טלפון",
                                     Toast.LENGTH_SHORT).show();
+                        }else
+                        if (edtPhone.getText().toString().trim().length()<10){
+                            mDialog.dismiss();
+                            Toast.makeText(SignUp.this, "המספר אינו תקין",
+                                    Toast.LENGTH_SHORT).show();
+                        }else
+                            if (noName.isEmpty()){
+                            mDialog.dismiss();
+                            Toast.makeText(SignUp.this, "חובה להזין שם משתמש",
+                                    Toast.LENGTH_SHORT).show();
+                        }else
+                        if (noPassword.isEmpty()){
+                            mDialog.dismiss();
+                            Toast.makeText(SignUp.this, "חובה להזין סיסמה",
+                                    Toast.LENGTH_SHORT).show();
+                        }else
+                        if (edtPassword.getText().toString().trim().length()<6){
+                            mDialog.dismiss();
+                            Toast.makeText(SignUp.this, "חובה להזין לפחות 6 תווים בסיסמה",
+                                    Toast.LENGTH_SHORT).show();
+                        }else
+
+                            // Check if already user phone
+                            if (dataSnapshot.child(edtPhone.getText().toString()).exists()){
+                                mDialog.dismiss();
+                                Toast.makeText(SignUp.this, "המספר כבר קיים במערכת",
+                                        Toast.LENGTH_SHORT).show();
 
 
-                        }else {
+                            }
+
+                        else {
                             mDialog.dismiss();
                             // try to fix i add Phone
                             User user = new User(edtName.getText().toString(),edtPassword.getText().toString(),edtPhone.getText().toString());
                             table_user.child(edtPhone.getText().toString()).setValue(user);
-                            Toast.makeText(SignUp.this, "sign up successfully ! ",
+                            Toast.makeText(SignUp.this, "ההרשמה בוצעה בהצלחה ! ",
                                     Toast.LENGTH_SHORT).show();
 //                            finish();
 
@@ -76,7 +111,7 @@ public class SignUp extends AppCompatActivity {// START
                         }
 
 
-                    }
+                    }// end onDataChange
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {

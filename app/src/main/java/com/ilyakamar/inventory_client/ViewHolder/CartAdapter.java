@@ -81,12 +81,18 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder>{
         holder.img_cart_count.setImageDrawable(drawable);
 
 
-        // tsarih livdok im nahuts
-        Locale locale = new Locale("en","US");
-        NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
+        // matbea mekomi us
+//        Locale locale = new Locale("en","US");
+//        NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
 
-        int price = (Integer.parseInt(listData.get(position).getPrice()))*(Integer.parseInt(listData.get(position).getQuantity()));
-        holder.txt_price.setText(fmt.format(price));
+        int price;
+
+             price = (Integer.parseInt(listData.get(position).getPrice()))*(Integer.parseInt(listData.get(position).getQuantity()));
+
+             // try
+        NumberFormat mCurrencyFormat = NumberFormat.getCurrencyInstance();
+
+        holder.txt_price.setText(mCurrencyFormat.format(price));
 
         holder.txt_cart_name.setText(listData.get(position).getProductName());
     }

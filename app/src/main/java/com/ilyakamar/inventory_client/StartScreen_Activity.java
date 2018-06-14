@@ -35,19 +35,19 @@ public class StartScreen_Activity extends AppCompatActivity implements View.OnCl
 
         bt_startScreen_join =  findViewById(R.id.bt_startScreen_join);
         bt_startScreen_logIn =  findViewById(R.id.bt_startScreen_logIn);
-        tv_startScreen_welcome =  findViewById(R.id.tv_startScreen_welcome);
+//        tv_startScreen_welcome =  findViewById(R.id.tv_startScreen_welcome);
 
         bt_startScreen_join.setOnClickListener(this);
         bt_startScreen_logIn.setOnClickListener(this);
 
-        changeFont();
+//        changeFont();
 
     }// end initControl
 
-    private void changeFont() {
-        Typeface face  = Typeface.createFromAsset(getAssets(),"fonts/NABILA.TTF");
-        tv_startScreen_welcome.setTypeface(face);
-    }
+//    private void changeFont() {
+//        Typeface face  = Typeface.createFromAsset(getAssets(),"fonts/NABILA.TTF");
+//        tv_startScreen_welcome.setTypeface(face);
+//    }
 
 
     @Override

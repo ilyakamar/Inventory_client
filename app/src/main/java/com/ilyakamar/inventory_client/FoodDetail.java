@@ -62,7 +62,7 @@ public class FoodDetail extends AppCompatActivity {// START
                         currentFood.getDiscount()
                 ));
 
-                Toast.makeText(FoodDetail.this, "Added to Cart",
+                Toast.makeText(FoodDetail.this, "נוסף לעגלה",
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -100,7 +100,7 @@ public class FoodDetail extends AppCompatActivity {// START
                         .into(food_image);
 
 
-                collapsingToolbarLayout.setTitle(currentFood.getName());
+//                collapsingToolbarLayout.setTitle(currentFood.getName());
 
                 food_price.setText(currentFood.getPrice());
 

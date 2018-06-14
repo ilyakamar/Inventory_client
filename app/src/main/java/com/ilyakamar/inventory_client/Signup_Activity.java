@@ -83,7 +83,7 @@ public class Signup_Activity extends AppCompatActivity implements View.OnClickLi
         et_email = (EditText)findViewById(R.id.et_activity_signup_email);
         et_password  = (EditText)findViewById(R.id.et_activity_signup_password);
         et_password_repeat  = (EditText)findViewById(R.id.et_activity_signup_password_repeat);
-        imageView_closeSignup = (ImageView) findViewById(R.id.iv_closeSignup);
+//        imageView_closeSignup = (ImageView) findViewById(R.id.iv_closeSignup);
         bt_signup_join = (Button)findViewById(R.id.bt_signup_join);
 
         imageView_closeSignup.setOnClickListener(this);
@@ -107,10 +107,10 @@ public class Signup_Activity extends AppCompatActivity implements View.OnClickLi
 
                 break;
 
-            case R.id.iv_closeSignup:
-                Log.d(TAG, "onClick: iv_closeSignup");
-                Signup_Activity.super.onBackPressed();
-                break;
+//            case R.id.iv_closeSignup:
+//                Log.d(TAG, "onClick: iv_closeSignup");
+//                Signup_Activity.super.onBackPressed();
+//                break;
 
         }
     }// end onClick
