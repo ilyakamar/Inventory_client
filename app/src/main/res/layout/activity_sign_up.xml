@@ -64,7 +64,7 @@
                     android:background="@drawable/element_for_ractangel"
                     android:drawableRight="@drawable/ic_person_black_24dp"
                     android:hint="שם"
-
+                    android:maxLength="15"
                     android:textAlignment="center"
                     android:inputType="text"/>
 
@@ -90,6 +90,7 @@
                     android:background="@drawable/element_for_ractangel"
                     android:drawableRight="@drawable/ic_lock_black_24dp"
                     android:hint="סיסמה"
+                    android:maxLength="15"
                     android:textAlignment="center"
                     android:inputType="textPassword"/>
 

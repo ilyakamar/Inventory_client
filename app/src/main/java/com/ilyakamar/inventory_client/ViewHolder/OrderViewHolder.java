@@ -2,13 +2,14 @@ package com.ilyakamar.inventory_client.ViewHolder;
 
 import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
 import android.view.View;
 import android.widget.TextView;
 
 import com.ilyakamar.inventory_client.Interface.ItemClickListener;
 import com.ilyakamar.inventory_client.R;
 
-public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnCreateContextMenuListener{
 
 
 
@@ -28,6 +29,7 @@ public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
 
         itemView.setOnClickListener(this);
+        itemView.setOnCreateContextMenuListener(this);
     }
 
     public void setItemClickListener(ItemClickListener itemClickListener) {
@@ -37,6 +39,14 @@ public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
     @Override
     public void onClick(View view) {
-        itemClickListener.onClick(view,getAdapterPosition(),false);
+
+
+        // ustranenie oshibki
+      //  itemClickListener.onClick(view,getAdapterPosition(),false);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+
     }
 }// END

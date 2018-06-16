@@ -21,6 +21,8 @@ public class SignUp extends AppCompatActivity {// START
 
     EditText edtPhone,edtPassword,edtName;
     Button btnSignUp;
+    boolean ok = true;
+
 
 
 
@@ -54,10 +56,14 @@ public class SignUp extends AppCompatActivity {// START
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
-                        String noPhone,noName,noPassword;
+                        String noPhone,noName,noPassword,corectNumber;
+
+
                         noPhone = edtPhone.getText().toString().trim();
                         noName = edtName.getText().toString().trim();
                         noPassword = edtPassword.getText().toString().trim();
+                        corectNumber = edtPhone.getText().toString().trim();
+
 
 
 
@@ -72,11 +78,33 @@ public class SignUp extends AppCompatActivity {// START
                             Toast.makeText(SignUp.this, "המספר אינו תקין",
                                     Toast.LENGTH_SHORT).show();
                         }else
+                            // Check if already user phone
+                            if (dataSnapshot.child(edtPhone.getText().toString()).exists()){
+                                mDialog.dismiss();
+
+                                if (ok)
+                                Toast.makeText(SignUp.this, "המספר כבר קיים במערכת",Toast.LENGTH_SHORT).show();
+
+                            }else
+
+                            /// try
+                        if (!(corectNumber.charAt(0)=='0')|| !(corectNumber.charAt(1)=='5')
+                                 ){   /// !corectNumber.contains("054")||
+                            mDialog.dismiss();
+                            Toast.makeText(SignUp.this, "קידומת של המספר אינה תקינה",
+                                    Toast.LENGTH_SHORT).show();
+                        }else
+                            // end try
                             if (noName.isEmpty()){
                             mDialog.dismiss();
                             Toast.makeText(SignUp.this, "חובה להזין שם משתמש",
                                     Toast.LENGTH_SHORT).show();
                         }else
+                            if (edtName.getText().toString().trim().length()<2){
+                                mDialog.dismiss();
+                                Toast.makeText(SignUp.this, "שם משתמש קצר מידי",
+                                        Toast.LENGTH_SHORT).show();
+                            }else
                         if (noPassword.isEmpty()){
                             mDialog.dismiss();
                             Toast.makeText(SignUp.this, "חובה להזין סיסמה",
@@ -88,26 +116,17 @@ public class SignUp extends AppCompatActivity {// START
                                     Toast.LENGTH_SHORT).show();
                         }else
 
-                            // Check if already user phone
-                            if (dataSnapshot.child(edtPhone.getText().toString()).exists()){
-                                mDialog.dismiss();
-                                Toast.makeText(SignUp.this, "המספר כבר קיים במערכת",
-                                        Toast.LENGTH_SHORT).show();
-
-
-                            }
-
-                        else {
+                             {
                             mDialog.dismiss();
                             // try to fix i add Phone
                             User user = new User(edtName.getText().toString(),edtPassword.getText().toString(),edtPhone.getText().toString());
                             table_user.child(edtPhone.getText().toString()).setValue(user);
                             Toast.makeText(SignUp.this, "ההרשמה בוצעה בהצלחה ! ",
                                     Toast.LENGTH_SHORT).show();
-//                            finish();
-
                             Intent homeIntent= new Intent(SignUp.this,Home.class);
                             startActivity(homeIntent);
+                            finish();
+                                 ok= false;
                         }
 
 
