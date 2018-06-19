@@ -1,6 +1,5 @@
 package com.ilyakamar.inventory_client.ViewHolder;
 
-import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.View;
@@ -42,7 +41,7 @@ public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
 
         // ustranenie oshibki
-      //  itemClickListener.onClick(view,getAdapterPosition(),false);
+        itemClickListener.onClick(view,getAdapterPosition(),false);
     }
 
     @Override

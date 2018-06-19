@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ilyakamar.inventory_client">
 
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,39 +9,54 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-        <activity android:name=".SplachScreen_Activity"
+        <activity
+            android:name=".SplachScreen_Activity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".StartScreen_Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Signup_Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Login_Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".FoodList"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".StartScreen_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Signup_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Login_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FoodList"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".FoodDetail"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Signin"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".SignUp"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Cart"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".OrderStatus"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FoodDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Signin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Cart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderStatus"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".Service.ListenOrder"
+            android:enabled="true"
+            android:exported="true">
+
+        </service>
     </application>
 
 </manifest>

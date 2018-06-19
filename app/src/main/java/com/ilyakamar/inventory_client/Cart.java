@@ -1,9 +1,9 @@
 package com.ilyakamar.inventory_client;
 
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -24,7 +24,6 @@ import com.ilyakamar.inventory_client.ViewHolder.CartAdapter;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class Cart extends AppCompatActivity {// START
 
@@ -102,10 +101,14 @@ public class Cart extends AppCompatActivity {// START
         alertDialog.setMessage("הכנס את הכתובת למשלוח: ");
 
         final EditText edtAddress = new EditText(Cart.this);
+        final EditText edtAddress_city = new EditText(Cart.this);
+        final EditText edtAddress_Home_no = new EditText(Cart.this);
+        final EditText edtAddress_apartment = new EditText(Cart.this);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT
         );
+
         edtAddress.setLayoutParams(lp);
         alertDialog.setView(edtAddress); // add edit text to alert dialog
         alertDialog.setIcon(R.drawable.ic_cart_black_24dp);
@@ -113,27 +116,35 @@ public class Cart extends AppCompatActivity {// START
         alertDialog.setPositiveButton("כן", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                // create new request
-                Request request = new Request(
-                        Common.currentUser.getPhone(),
-                        Common.currentUser.getName(),
-                        edtAddress.getText().toString(),
-                        txtTotalPrice.getText().toString(),
-                        cart
-                );
+
+                if(edtAddress.getText().toString().trim().equals("")){
+                    Toast.makeText(Cart.this, "חובה להזין כתובת",
+                            Toast.LENGTH_SHORT).show();
+                }else {
+                    // create new request
+                    Request request = new Request(
+                            Common.currentUser.getPhone(),
+                            Common.currentUser.getName(),
+                            edtAddress.getText().toString(),
+                            txtTotalPrice.getText().toString(),
+                            cart
+                    );
 
 
 
 
-                // submit to firebase
-                // we will using system.currentMilli to key
-                requests.child(String.valueOf(System.currentTimeMillis()))
-                        .setValue(request);
-                // Delete cart   *********************************************************************
-                new Database(getBaseContext()).cleanCart();
-                Toast.makeText(Cart.this, "תודה על ההזמנה",
-                        Toast.LENGTH_SHORT).show();
-                finish();
+                    // submit to firebase
+                    // we will using system.currentMilli to key
+                    requests.child(String.valueOf(System.currentTimeMillis()))
+                            .setValue(request);
+                    // Delete cart   *********************************************************************
+                    new Database(getBaseContext()).cleanCart();
+                    Toast.makeText(Cart.this, "תודה על ההזמנה",
+                            Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+
+
             }
         });
 

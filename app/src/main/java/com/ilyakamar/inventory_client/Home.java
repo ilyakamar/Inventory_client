@@ -3,20 +3,18 @@ package com.ilyakamar.inventory_client;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.ilyakamar.inventory_client.Common.Common;
 import com.ilyakamar.inventory_client.Interface.ItemClickListener;
 import com.ilyakamar.inventory_client.Model.Category;
+import com.ilyakamar.inventory_client.Service.ListenOrder;
 import com.ilyakamar.inventory_client.ViewHolder.MenuViewHolder;
 import com.squareup.picasso.Picasso;
 
@@ -49,7 +48,7 @@ public class Home extends AppCompatActivity
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Menu");
+        toolbar.setTitle("תפריט");
         setSupportActionBar(toolbar);
 
 
@@ -93,7 +92,9 @@ public class Home extends AppCompatActivity
         loadMenu();
 
 
-
+        // Register Service
+        Intent service = new Intent(Home.this, ListenOrder.class);
+        startService(service);
 
 
 

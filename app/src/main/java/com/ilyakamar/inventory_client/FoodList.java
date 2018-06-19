@@ -84,7 +84,7 @@ public class FoodList extends AppCompatActivity {
 
         // Search
         materialSearchBar = findViewById(R.id.searchBar);
-        materialSearchBar.setHint("Enter your food");
+        materialSearchBar.setHint("הזן מוצר לחיפוש");
      //    materialSearchBar.setSpeechMode(false); // no need , becus we already define it in xml
         loadSuggest(); // write function to load suggest from firebase
 

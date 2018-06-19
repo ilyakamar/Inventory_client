@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Database extends SQLiteAssetHelper {// START
 
-    private final static String DB_NAME =  "EatItDB.db";
+//    private final static String DB_NAME =  "EatItDB.db";
     private final static String DB_NAME_TRY =  "inventoryDB.db";
     private final static int DB_VER =  1;
 
@@ -26,7 +26,10 @@ public class Database extends SQLiteAssetHelper {// START
     }// end cons Database
 
 
-
+    /**
+     * the func return list of items thet we store in the cart
+     * @return
+     */
     public List<Order> getCarts(){
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
@@ -52,7 +55,7 @@ public class Database extends SQLiteAssetHelper {// START
             }while (c.moveToNext());
         }
         return result;
-    }
+    }// end getCarts
 
 
     public void addToCart(Order order){// addToCart()
