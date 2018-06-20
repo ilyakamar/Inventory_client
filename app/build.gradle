@@ -32,7 +32,8 @@ dependencies {
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
 
     // constraint-layout
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'// implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+// implementation 'com.android.support.constraint:constraint-layout:1.1.0'
 
     // firebase
     implementation 'com.google.firebase:firebase-auth:11.8.0'
@@ -64,10 +65,8 @@ dependencies {
     // sqliteassethelper
     implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
 
-
     // add MaterialSearchBar
     implementation 'com.github.mancj:MaterialSearchBar:0.7.1'
-
 
     //
 }

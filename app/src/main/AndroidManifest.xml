@@ -54,9 +54,9 @@
         <service
             android:name=".Service.ListenOrder"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"></service>
 
-        </service>
+        <activity android:name=".ContactUs"></activity>
     </application>
 
 </manifest>

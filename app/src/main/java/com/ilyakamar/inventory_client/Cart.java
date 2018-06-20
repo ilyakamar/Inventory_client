@@ -6,10 +6,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -100,17 +100,14 @@ public class Cart extends AppCompatActivity {// START
         alertDialog.setTitle("עוד צעד אחרון!");
         alertDialog.setMessage("הכנס את הכתובת למשלוח: ");
 
-        final EditText edtAddress = new EditText(Cart.this);
-        final EditText edtAddress_city = new EditText(Cart.this);
-        final EditText edtAddress_Home_no = new EditText(Cart.this);
-        final EditText edtAddress_apartment = new EditText(Cart.this);
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT
-        );
+        LayoutInflater inflater = this.getLayoutInflater();
+        View order_address_comment = inflater.inflate(R.layout.order_address_comment,null);
 
-        edtAddress.setLayoutParams(lp);
-        alertDialog.setView(edtAddress); // add edit text to alert dialog
+        // init
+        final EditText edtAddress = order_address_comment.findViewById(R.id.edtAddress);
+        final EditText edtComment = order_address_comment.findViewById(R.id.edtComment);
+
+        alertDialog.setView(order_address_comment);
         alertDialog.setIcon(R.drawable.ic_cart_black_24dp);
 
         alertDialog.setPositiveButton("כן", new DialogInterface.OnClickListener() {
@@ -127,6 +124,8 @@ public class Cart extends AppCompatActivity {// START
                             Common.currentUser.getName(),
                             edtAddress.getText().toString(),
                             txtTotalPrice.getText().toString(),
+                            "0", // status
+                            edtComment.getText().toString(),
                             cart
                     );
 
